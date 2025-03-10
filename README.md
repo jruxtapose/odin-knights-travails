@@ -47,15 +47,18 @@ The algorithm maintains a queue of nodes to visit, a set of visited nodes, and a
 
 ## Testing
 
-The `knightMoves` function has been tested with various origin and destination combinations, including simple cases, long moves, and edge cases. Invalid inputs are handled with appropriate error messages.
+The `main.js` file contains a series of tests that thoroughly evaluate the `knightMoves` function. These tests cover various scenarios, including:
 
-## Potential Improvements
+* Simple moves
+* Long moves
+* Moves to the same location
+* Moves along a single row or diagonal
+* Complex moves
+* Invalid origin and destination inputs
+* Node object destinations
 
-* Implement performance optimizations, such as exploring different data structures for the queue and visited set.
-* Add visual representation of the path.
-* Expand to allow for different board sizes.
-* Add more comprehensive testing.
+The tests utilize a `try...catch` block to handle potential errors, ensuring that all tests are executed and results are displayed, even in the event of failures. This approach provides comprehensive testing coverage and ensures that the `knightMoves` function behaves as expected in a variety of situations.
 
 ## Author
 
-[Your Name/GitHub Profile]
+jruxtapose
