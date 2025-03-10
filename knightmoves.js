@@ -5,15 +5,15 @@ export default function knightMoves(origin, destination) {
   const knightOrigin = !isValid(origin)
     ? null
     : origin instanceof Node
-    ? origin
-    : new Node(origin[0], origin[1]);
+      ? origin
+      : new Node(origin[0], origin[1]);
   if (knightOrigin === null) throw new Error("Origin is invalid location.");
 
   const knightDestination = !isValid(destination)
     ? null
     : destination instanceof Node
-    ? destination
-    : new Node(destination[0], destination[1]);
+      ? destination
+      : new Node(destination[0], destination[1]);
   if (knightDestination === null)
     throw new Error("Destination is invalid location.");
 
@@ -70,15 +70,19 @@ export default function knightMoves(origin, destination) {
     });
 
     const moves = shortestPathLength - 1;
-    const message =
+    const paths = allShortestPaths.length;
+    const movesMessage =
       moves > 1
-        ? `You made it in ${moves} moves! Here are your paths:`
+        ? `You made it in ${moves} moves!`
         : moves === 1
-        ? "You made it in one move! Here is your path:"
-        : "You are already there!";
+          ? "You made it in one move!"
+          : "You are already there!";
+
+    const pathsMessage = paths === 1 ? "Here is your path." : "Here are your paths."
 
     return {
-      message,
+      movesMessage,
+      pathsMessage,
       paths: formattedPaths,
     };
   }
