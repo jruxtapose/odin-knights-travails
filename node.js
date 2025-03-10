@@ -1,7 +1,16 @@
 export default class Node{
     constructor(i, j){
-        this.i = i;
-        this.j = j;
+        if(i >= 0 && i <= 7) {
+            this.i = i;
+        } else {
+            throw new Error (`i = ${i} is outside the board.`)
+        }
+        if(j >= 0 && i <= 7) {
+            this.j = j;
+        } else {
+            throw new Error (`j = ${j} is outside the board.`)
+        }
+        this.availableMoves = this.getMoves();
         this.next = null;
     }
 
@@ -15,5 +24,9 @@ export default class Node{
 
     getLocation(){
         return [this.i, this.j];
+    }
+
+    getMoves(){
+        
     }
 }
