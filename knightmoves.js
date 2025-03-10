@@ -78,11 +78,12 @@ export default function knightMoves(origin, destination) {
           ? "You made it in one move!"
           : "You are already there!";
 
-    const pathsMessage = paths === 1 ? "Here is your path." : "Here are your paths."
+    const pathsMessage = paths === 1 ? "Here is your path:" : "Here are your paths:"
+
+    const message = movesMessage + ' ' + pathsMessage;
 
     return {
-      movesMessage,
-      pathsMessage,
+      message,
       paths: formattedPaths,
     };
   }
