@@ -15,23 +15,21 @@ This is a Node.js application that calculates the shortest path a knight can fol
     ```bash
     npm install # or yarn install if you use yarn
     ```
-3.  **Run the application:**
-    * Create a file that imports and calls the `knightMoves` function.
-    * Example:
-        ```javascript
-        import knightMoves from './knightMoves.js';
+3.  **Run the Tests:**
 
-        const result = knightMoves([0, 0], [3, 3]);
-        if (result) {
-          console.log('Shortest Paths:', result.paths);
-          console.log('Moves:', result.movesCount);
-        } else {
-          console.log('No path found.');
-        }
-        ```
-    * Execute the file using Node.js:
+    * From the project directory, execute the `main.js` file using Node.js:
         ```bash
-        node your-file-name.js
+        node main.js
+        ```
+    * This will run a series of tests that call the `knightMoves` function with various origin and destination coordinates, including edge cases.
+    * The output will display the results of each test, including the shortest paths found and the number of moves taken, or any errors encountered.
+    * Example output:
+        ```
+        knightMoves([0, 0], [1, 2])
+        Result: { paths: [ '[0, 0] -> [1, 2]' ], movesCount: 1 }
+        knightMoves([8, 8], [0, 0])
+        Error: Origin is invalid location.
+        ...
         ```
 
 ## Algorithm
