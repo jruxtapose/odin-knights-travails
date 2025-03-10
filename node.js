@@ -1,32 +1,25 @@
 export default class Node{
-    constructor(i, j){
-        if(i >= 0 && i <= 7) {
-            this.i = i;
+    // Checks that node is within board before creation.
+    constructor(vertical, horizontal){
+        if(vertical >= 0 && vertical <= 7) {
+            this.vertical = vertical;
         } else {
-            throw new Error (`i = ${i} is outside the board.`)
+            throw new Error (`Vertical = ${vertical} is outside the board.`)
         }
-        if(j >= 0 && i <= 7) {
-            this.j = j;
+        if(horizontal >= 0 && horizontal <= 7) {
+            this.horizontal = horizontal;
         } else {
-            throw new Error (`j = ${j} is outside the board.`)
+            throw new Error (`Horizontal = ${horizontal} is outside the board.`)
         }
-        this.availableMoves = this.getMoves();
-        this.next = null;
     }
-
-    setNext(node){
-        this.next = node;
-    }
-
-    getNext(){
-        return this.next;
-    }
-
+    // Returns location of node.
     getLocation(){
-        return [this.i, this.j];
+        return [this.vertical, this.horizontal];
     }
 
-    getMoves(){
-        
+    // Compares node to other node.
+    equals(otherNode) {
+        if (otherNode === null) return false;
+        return this.vertical === otherNode.vertical && this.horizontal === otherNode.horizontal;
     }
 }
