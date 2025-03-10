@@ -68,9 +68,18 @@ export default function knightMoves(origin, destination) {
     const formattedPaths = allShortestPaths.map((path) => {
       return formatPath(path);
     });
+
+    const moves = shortestPathLength - 1;
+    const message =
+      moves > 1
+        ? `You made it in ${moves} moves! Here are your paths:`
+        : moves === 1
+        ? "You made it in one move! Here is your path:"
+        : "You are already there!";
+
     return {
+      message,
       paths: formattedPaths,
-      movesCount: shortestPathLength - 1,
     };
   }
   // Should never happen.

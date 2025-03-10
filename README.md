@@ -8,12 +8,12 @@ This is a Node.js application that calculates the shortest path a knight can fol
 
 1.  **Clone the repository:**
     ```bash
-    git clone [repository URL]
+    git clone https://github.com/jruxtapose/odin-knights-travails.git
     cd odin-knights-travails
     ```
 2.  **Install dependencies:**
     ```bash
-    npm install # or yarn install if you use yarn
+    npm install
     ```
 3.  **Run the Tests:**
 
